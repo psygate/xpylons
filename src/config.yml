@@ -1,0 +1,29 @@
+# This is the material with which you have to hit the base block to activate a pylon.
+activationMaterial: DIAMOND_HOE
+
+# This is the size of the pylon area in which it will leech XP. Format is: Width Height Depth (aka. x,y,z)
+pylonBox: 50 100 50
+
+# Minimal distance between pylons
+minPylonDistance: 100
+
+# Chance to stop growth and turn that cycle into XP instead:
+growthStopChance: 100%
+
+# XP per stopped growth cycle:
+xpPerGrowth: 2
+
+# This determines the "shape" of a pylon. Format is: x y z material_name
+# You can set this ingame as admin with /xpylonstemplate
+template:
+  - 1 0 -1 OBSIDIAN
+  - 0 0 -1 OBSIDIAN
+  - -1 0 -1 OBSIDIAN
+  - 1 0 0 OBSIDIAN
+  - 0 0 0 OBSIDIAN
+  - -1 0 0 OBSIDIAN
+  - 1 0 1 OBSIDIAN
+  - 0 0 1 OBSIDIAN
+  - -1 0 1 OBSIDIAN
+  - 0 0 -1 OBSIDIAN
+  - 0 1 0 GLOWSTONE

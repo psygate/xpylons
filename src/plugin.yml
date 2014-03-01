@@ -1,0 +1,78 @@
+name: XPylons
+version: 1.0.0
+author: psygate
+main: com.psygate.xpylons.XPylons
+database: true
+prefix: xpylons
+commands:
+  xpylonsshowxp:
+    description: Show the stored xp in a near by pylon.
+    aliases: [xpyxp]
+    usage: /pylonsshowxp
+    permission: pylons.xp.show
+    permission-message: Insufficient permission to see pylon xp.
+  xpylonsretrievexp:
+    description: Retrieves XP from a pylon.
+    aliases: [xpyrxp]
+    usage: /xpylonsretrievexp <amount>
+    permission: pylons.xp.retrieve
+    permission-message: Insufficient permission to see pylon xp.
+  xpylonslist:
+    description: Retrieves the full list of pylons.
+    aliases: [xpyl]
+    usage: /xpylonslist
+    permission: pylons.admin.list
+    permission-message: Insufficient permission to list pylons.
+  xpylonspurge:
+    description: Purges all pylon data from the database.
+    aliases: [xppurge]
+    usage: /xpylonspurge
+    permission: pylons.admin.purge
+    permission-message: Insufficient permission to purge.
+  xpylonstemplate:
+    description: Sets whatever structure you are looking at as the template for new pylons.
+    aliases: [xpst]
+    usage: /xpylonstemplate
+    permission: pylons.admin.settemplate
+    permission-message: Insufficient permission to template.
+  xpylonsstore:
+    description: Stores XP in a pylon.
+    aliases: [xpsxp]
+    usage: /xpylonsstore [<amount>]
+    permission: pylons.xp.store
+    permission-message: Insufficient permission to store xp.
+  xpylonssetxp:
+    description: Adds the specified xp to a pylon.
+    aliases: [xpset]
+    usage: /xpylonssetxp (<amount>|<amount> <pylon-x> <pylon-y> <pylon-z> <world-name|world-uid>)
+    permission: pylons.admin.setxp
+    permission-message: Insufficient permission to store xp.
+    
+permissions:
+  xpylons.xp.*:
+    description: Allows a player to use the xp features of a pylon.
+    children:
+      pylons.xp.store: 
+        description: Allows storage of xp in a pylon.
+        default: true
+      pylons.xp.retrieve: 
+        description: Allows storage of xp in a pylon.
+        default: true
+      pylons.xp.show: 
+        description: Allows storage of xp in a pylon.
+        default: true
+  xpylons.admin.*:
+    description: Allows administration of pylons.
+    children:
+      pylons.admin.setxp:
+        description: Allows altering the xp stored in a pylon.
+        default: op
+      pylons.admin.settemplate:
+        description: Allows altering of the pylon template.
+        default: op
+      pylons.admin.purge:
+        description: Allows deletion of the complete pylon database.
+        default: op
+      pylons.admin.list:
+        description: Allows listing of all pylons.
+        default: op
