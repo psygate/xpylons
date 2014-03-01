@@ -1,2 +1,0 @@
-- Let users store their xp inside a pylon.
-- Let admins set the amount of xp in a pylon.
