@@ -70,11 +70,15 @@ public class PlayerCommands implements CommandExecutor, XPylonCommand {
 				return;
 			}
 
-			Bukkit.getPluginManager().callEvent(new PlayerExpChangeEvent((Player) sender, -xp));
+			// Bukkit.getPluginManager().callEvent(new
+			// PlayerExpChangeEvent((Player) sender, -xp));
 			player.setTotalExperience(0);
 			player.setLevel(0);
 			player.setExp(0);
-			player.giveExp(pexp - xp);
+			if (pexp - xp > 0) {
+				player.giveExp(pexp - xp);
+				player.setExp(pexp - xp);
+			}
 			// player.setTotalExperience(0);
 			// sender.sendMessage(pexp + " " + xp + " : " + (pexp - xp));
 			// player.giveExp(pexp - xp);

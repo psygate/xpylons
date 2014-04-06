@@ -22,7 +22,7 @@ public class XPylons extends JavaPlugin {
 	private WatchDogConfiguration wconf;
 	private WatchDog dog;
 	private DBLayer dblayer;
-
+	
 	public XPylons() {
 		instance = this;
 	}
